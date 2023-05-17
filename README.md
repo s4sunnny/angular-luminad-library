@@ -24,6 +24,14 @@ one is for Admin user and other is for Normal User.
 
 This project is Easy to use i.e, the UI is easily understandable.
 
+# Usage
+
+First pull this prohect by using git clone https://github.com/sunny12121/angular-luminad-library.git
+
+Then use angular cli to install/update all the dependency by using npm -i command
+
+and then to run the project use ng -s command
+
 # Validation is not been added for Add books operation. That can be added according to the requirement
 
 ## Development server
