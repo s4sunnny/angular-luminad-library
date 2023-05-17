@@ -90,7 +90,7 @@ export class AppService {
         "content-type": "application/json",
         "Authorization": "Bearer " + this.getToken()
       }
-      return this.http.post<any>(`${this.urlToken}/updateBookById`,bookObj, {headers});
+      return this.http.put<any>(`${this.urlToken}/updateBookById`,bookObj, {headers});
     }else{
       return;
     }
@@ -104,7 +104,7 @@ export class AppService {
       }
     let queryParam = new HttpParams();
     queryParam = queryParam.append("bookId", bookId);
-      return this.http.get<any>(`${this.urlToken}/deleteBookById`, {params:queryParam, headers: headers});
+      return this.http.get(`${this.urlToken}/deleteBookById`, {params:queryParam, headers: headers});
     }else{
       return;
     }
