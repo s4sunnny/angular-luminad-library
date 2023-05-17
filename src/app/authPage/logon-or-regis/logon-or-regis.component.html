@@ -1,0 +1,21 @@
+<div class="login">
+  <div class="form">
+    <h2 class="mt-4 text-white mb-4 text-center">Login</h2>
+    <div *ngIf="errorMessage" class="alert alert-warning">
+      <strong>Warning!</strong> {{errorMessage}}
+    </div>
+    <form action="" class="mt-5" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <input formControlName="username" [ngClass]="{ 'is-invalid': submitted && f['username'].errors }"
+        type="text" class="customInputForm" placeholder="Username or Email" required matInput>
+      <div *ngIf="submitted && f['username'].errors" class="invalid-feedback">
+        <div *ngIf="f['username'].errors['required']">Username or Email is required</div>
+      </div>
+
+      <input formControlName="password" [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" type="password" class="customInputForm" placeholder="Password" required matInput>
+      <div *ngIf="submitted && f['password'].errors" class="invalid-feedback">
+        <div *ngIf="f['password'].errors['required']">Password is required</div>
+      </div><br><br><br>
+      <button class="btn btn-outline-light btn-round w-100" type="submit">Login</button>
+    </form>
+  </div>
+</div>
