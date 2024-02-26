@@ -1,4 +1,4 @@
-<div class="login">
+<!-- <div class="login">
   <div class="form">
     <h2 class="mt-4 text-white mb-4 text-center">Login</h2>
     <div *ngIf="errorMessage" class="alert alert-warning">
@@ -18,4 +18,92 @@
       <button class="btn btn-outline-light btn-round w-100" type="submit">Login</button>
     </form>
   </div>
-</div>
+</div> -->
+
+<section class="text-center text-lg-start">
+  <div class="container cont">
+    <div class="row g-0 align-items-center">
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <h1 class="text-center">Library Management</h1>
+        <div
+          class="card cascading-right"
+          style="
+            background: hsla(0, 0%, 100%, 0.55);
+            backdrop-filter: blur(30px);
+          "
+        >
+          <div class="card-body p-5 shadow-5 text-center">
+            <h2 class="fw-bold mb-5">Sign In</h2>
+            <div *ngIf="errorMessage" class="alert alert-warning">
+              <strong>Warning!</strong> {{ errorMessage }}
+            </div>
+            <form
+              action=""
+              class="mt-5"
+              [formGroup]="form"
+              (ngSubmit)="onSubmit()"
+            >
+              <div class="form-outline mb-4">
+                <input
+                  formControlName="username"
+                  [ngClass]="{
+                    'is-invalid': submitted && f['username'].errors
+                  }"
+                  type="text"
+                  class="customInputForm"
+                  placeholder="Username"
+                  required
+                  matInput
+                />
+                <label class="form-label" for="form3Example3">Username</label>
+              </div>
+              <div
+                *ngIf="submitted && f['username'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['username'].errors['required']">
+                  Username or Email is required
+                </div>
+              </div>
+
+              <div class="form-outline mb-4">
+                <input
+                  formControlName="password"
+                  [ngClass]="{
+                    'is-invalid': submitted && f['password'].errors
+                  }"
+                  type="password"
+                  class="customInputForm"
+                  placeholder="Password"
+                  required
+                  matInput
+                />
+                <label class="form-label" for="form3Example4">Password</label>
+              </div>
+              <div
+                *ngIf="submitted && f['password'].errors"
+                class="invalid-feedback"
+              >
+                <div *ngIf="f['password'].errors['required']">
+                  Password is required
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block mb-4">
+                Sign up
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROT336fy383EkXbxpBlD8--2vz1Kn7d2GeVA&s"
+          class="w-100 rounded-4 shadow-4"
+          alt=""
+        />
+      </div>
+    </div>
+  </div>
+</section>

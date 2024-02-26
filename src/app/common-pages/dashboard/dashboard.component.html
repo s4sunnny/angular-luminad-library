@@ -5,37 +5,46 @@
     <a class="nav-item nav-link" (click)="logout()">Logout</a>
   </div>
 </nav>
-<h2 class="text-center">Welcome</h2>
 <div [hidden]="hideBookList" class="container">
   <table class="table">
-  <thead>
-    <th>SrNo.</th>
-    <th>Book Id</th>
-    <th>Title</th>
-    <th>Author</th>
-    <th>Publication Date</th>
-    <th>ISBN number</th>
-    <th>Number of pages</th>
-  </thead>
-  <tbody>
-    <tr *ngFor="let bookObj of LoadedBookList; let i=index">
-      <td>{{i+1}}</td>
-      <td>{{bookObj.bookId}}</td>
-      <td>{{bookObj.title}}</td>
-      <td>{{bookObj.author}}</td>
-      <td>{{bookObj.publicationDate}}</td>
-      <td>{{bookObj.isbn}}</td>
-      <td>{{bookObj.noOfPages}}</td>
-    </tr>
-  </tbody>
+    <thead>
+      <th>SrNo.</th>
+      <th>Book Id</th>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Publication Date</th>
+      <th>ISBN number</th>
+      <th>Number of pages</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let bookObj of LoadedBookList; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ bookObj.bookId }}</td>
+        <td>{{ bookObj.title }}</td>
+        <td>{{ bookObj.author }}</td>
+        <td>{{ bookObj.publicationDate }}</td>
+        <td>{{ bookObj.isbn }}</td>
+        <td>{{ bookObj.noOfPages }}</td>
+      </tr>
+    </tbody>
   </table>
-  </div>
+</div>
 
-  <div [hidden]="hideGetBooksById" class="container">
-    <div class="container">
-      <mat-label>Book Id :</mat-label><br>
-      <input type="number" style="background-color: #fff;border: 2px solid #d5d5d5;border-radius: 8px;" [(ngModel)] = "bookId"><br><br>
+<div [hidden]="hideGetBooksById" class="container">
+  <div class="container">
+    <mat-label>Book Id :</mat-label><br />
+    <input
+      type="number"
+      style="
+        background-color: #fff;
+        border: 2px solid #d5d5d5;
+        border-radius: 8px;
+      "
+      [(ngModel)]="bookId"
+    /><br /><br />
 
-      <button class="btn btn-round btn-success" (click)="getBooksById()">Search</button>
-    </div>
+    <button class="btn btn-round btn-success" (click)="getBooksById()">
+      Search
+    </button>
   </div>
+</div>

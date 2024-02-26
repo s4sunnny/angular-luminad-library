@@ -9,74 +9,137 @@
   </div>
 </nav>
 
-<h2 class="text-center">Welcome</h2>
 <div [hidden]="hideAddBooks" class="container">
   <div class="row">
+    <div class="col-md-12 text-center"><h1>Add Books</h1></div>
+  </div>
+  <div class="row">
     <div class="col-md-4">
-      <mat-label>Title</mat-label><br>
-      <input style="background-color: #fff;border: 2px solid #d5d5d5;border-radius: 8px;" type="text" [(ngModel)] = "bookDetails.title">
+      <mat-label>Title</mat-label><br />
+      <input
+        style="
+          background-color: #fff;
+          border: 2px solid #d5d5d5;
+          border-radius: 8px;
+        "
+        type="text"
+        [(ngModel)]="bookDetails.title"
+      />
     </div>
     <div class="col-md-4">
-      <mat-label>Author</mat-label><br>
-      <input style="background-color: #fff;border: 2px solid #d5d5d5;border-radius: 8px;" type="text" [(ngModel)] = "bookDetails.author">
+      <mat-label>Author</mat-label><br />
+      <input
+        style="
+          background-color: #fff;
+          border: 2px solid #d5d5d5;
+          border-radius: 8px;
+        "
+        type="text"
+        [(ngModel)]="bookDetails.author"
+      />
     </div>
     <div class="col-md-4">
-      <mat-label>ISBN Number</mat-label><br>
-      <input style="background-color: #fff;border: 2px solid #d5d5d5;border-radius: 8px;" type="text" [(ngModel)] = "bookDetails.isbn">
+      <mat-label>ISBN Number</mat-label><br />
+      <input
+        style="
+          background-color: #fff;
+          border: 2px solid #d5d5d5;
+          border-radius: 8px;
+        "
+        type="text"
+        [(ngModel)]="bookDetails.isbn"
+      />
     </div>
   </div>
 
   <div class="row">
     <div class="col-md-4">
-      <mat-label>Number of pages :</mat-label><br>
-      <input style="background-color: #fff;border: 2px solid #d5d5d5;border-radius: 8px;" type="number" [(ngModel)] = "bookDetails.noOfPages">
+      <mat-label>Number of pages :</mat-label><br />
+      <input
+        style="
+          background-color: #fff;
+          border: 2px solid #d5d5d5;
+          border-radius: 8px;
+        "
+        type="number"
+        [(ngModel)]="bookDetails.noOfPages"
+      />
     </div>
-  </div><br>
+  </div>
+  <br />
 
   <div class="row">
-    <button [hidden]="addButton" class="btn btn-round btn-success" (click)="addBooks()">Add Book</button>
-    <button [hidden]="editButton" class="btn btn-round btn-success" (click)="updateBooks()">Update Book</button>
+    <button
+      [hidden]="addButton"
+      class="btn btn-round btn-success"
+      (click)="addBooks()"
+    >
+      Add Book
+    </button>
+    <button
+      [hidden]="editButton"
+      class="btn btn-round btn-success"
+      (click)="updateBooks()"
+    >
+      Update Book
+    </button>
   </div>
 </div>
 
-
 <div [hidden]="hideBookList" class="container">
-<table class="table">
-<thead>
-  <th>SrNo.</th>
-  <th>Book Id</th>
-  <th>Title</th>
-  <th>Author</th>
-  <th>Publication Date</th>
-  <th>ISBN number</th>
-  <th>Number of pages</th>
-</thead>
-<tbody>
-  <tr *ngFor="let bookObj of LoadedBookList; let i=index">
-    <td>{{i+1}}</td>
-    <td>{{bookObj.bookId}}</td>
-    <td>{{bookObj.title}}</td>
-    <td>{{bookObj.author}}</td>
-    <td>{{bookObj.publicationDate}}</td>
-    <td>{{bookObj.isbn}}</td>
-    <td>{{bookObj.noOfPages}}</td>
-  </tr>
-</tbody>
-</table>
+  <div class="row">
+    <div class="col-md-12 text-center"><h1>All Books</h1></div>
+  </div>
+  <table class="table">
+    <thead>
+      <th>SrNo.</th>
+      <th>Book Id</th>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Publication Date</th>
+      <th>ISBN number</th>
+      <th>Number of pages</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let bookObj of LoadedBookList; let i = index">
+        <td>{{ i + 1 }}</td>
+        <td>{{ bookObj.bookId }}</td>
+        <td>{{ bookObj.title }}</td>
+        <td>{{ bookObj.author }}</td>
+        <td>{{ bookObj.publicationDate }}</td>
+        <td>{{ bookObj.isbn }}</td>
+        <td>{{ bookObj.noOfPages }}</td>
+      </tr>
+    </tbody>
+  </table>
 </div>
 
 <div [hidden]="hideGetBooksById" class="container">
+  <div class="row">
+    <div class="col-md-12 text-center"><h1>Search Books</h1></div>
+  </div>
   <div class="container">
-    <mat-label>Book Id :</mat-label><br>
-    <input type="number" style="background-color: #fff;border: 2px solid #d5d5d5;border-radius: 8px;" [(ngModel)] = "bookId"><br><br>
+    <mat-label>Book Id :</mat-label><br />
+    <input
+      type="number"
+      style="
+        background-color: #fff;
+        border: 2px solid #d5d5d5;
+        border-radius: 8px;
+      "
+      [(ngModel)]="bookId"
+    /><br /><br />
 
-    <button class="btn btn-round btn-success" (click)="getBooksById()">Search</button>
+    <button class="btn btn-round btn-success" (click)="getBooksById()">
+      Search
+    </button>
   </div>
 </div>
 
-
-
 <div [hidden]="hideUpdateBooks" class="container">
+  <div class="row">
+    <div class="col-md-12 text-center"><h1>Update Books</h1></div>
+  </div>
   <div class="container">
     <table class="table">
       <thead>
@@ -90,48 +153,63 @@
         <th>Number of pages</th>
       </thead>
       <tbody>
-        <tr *ngFor="let bookObj of LoadedBookList; let i=index">
-          <td>{{i+1}}</td>
-          <td><button class="btn btn-round btn-danger" (click) = "editBook(bookObj.bookId)">Edit</button></td>
-          <td >{{bookObj.bookId}}</td>
-          <td>{{bookObj.title}}</td>
-          <td>{{bookObj.author}}</td>
-          <td>{{bookObj.publicationDate}}</td>
-          <td>{{bookObj.isbn}}</td>
-          <td>{{bookObj.noOfPages}}</td>
+        <tr *ngFor="let bookObj of LoadedBookList; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>
+            <button
+              class="btn btn-round btn-danger"
+              (click)="editBook(bookObj.bookId)"
+            >
+              Edit
+            </button>
+          </td>
+          <td>{{ bookObj.bookId }}</td>
+          <td>{{ bookObj.title }}</td>
+          <td>{{ bookObj.author }}</td>
+          <td>{{ bookObj.publicationDate }}</td>
+          <td>{{ bookObj.isbn }}</td>
+          <td>{{ bookObj.noOfPages }}</td>
         </tr>
       </tbody>
-      </table>
-    </div>
-</div>
-
-<div [hidden]="hideDeleteBooks" class="container">
-<div class="container">
-  <table class="table">
-    <thead>
-      <th>SrNo.</th>
-      <th>Delete record</th>
-      <th>Book Id</th>
-      <th>Title</th>
-      <th>Author</th>
-      <th>Publication Date</th>
-      <th>ISBN number</th>
-      <th>Number of pages</th>
-    </thead>
-    <tbody>
-      <tr *ngFor="let bookObj of LoadedBookList; let i=index">
-        <td>{{i+1}}</td>
-        <td><button class="btn btn-round btn-danger" (click) = "deleteBooks(bookObj.bookId)">Delete</button></td>
-        <td >{{bookObj.bookId}}</td>
-        <td>{{bookObj.title}}</td>
-        <td>{{bookObj.author}}</td>
-        <td>{{bookObj.publicationDate}}</td>
-        <td>{{bookObj.isbn}}</td>
-        <td>{{bookObj.noOfPages}}</td>
-      </tr>
-    </tbody>
     </table>
   </div>
 </div>
 
-
+<div [hidden]="hideDeleteBooks" class="container">
+  <div class="row">
+    <div class="col-md-12 text-center"><h1>Delete Books</h1></div>
+  </div>
+  <div class="container">
+    <table class="table">
+      <thead>
+        <th>SrNo.</th>
+        <th>Delete record</th>
+        <th>Book Id</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Publication Date</th>
+        <th>ISBN number</th>
+        <th>Number of pages</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let bookObj of LoadedBookList; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>
+            <button
+              class="btn btn-round btn-danger"
+              (click)="deleteBooks(bookObj.bookId)"
+            >
+              Delete
+            </button>
+          </td>
+          <td>{{ bookObj.bookId }}</td>
+          <td>{{ bookObj.title }}</td>
+          <td>{{ bookObj.author }}</td>
+          <td>{{ bookObj.publicationDate }}</td>
+          <td>{{ bookObj.isbn }}</td>
+          <td>{{ bookObj.noOfPages }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

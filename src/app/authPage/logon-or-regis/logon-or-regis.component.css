@@ -1,4 +1,4 @@
-* {
+/* * {
   box-sizing: border-box;
   font-family: sans-serif;
 }
@@ -41,4 +41,26 @@
 }
 .ml-1{
   margin-left: 25px;
+} */
+
+.cascading-right {
+  margin-right: -50px;
+}
+
+input{
+  color: black;
+}
+
+@media (max-width: 991.98px) {
+  .cascading-right {
+    margin-right: 0;
+  }
+}
+
+.cont{
+  padding: 0 6% 0 6%;
+}
+
+.is-invalid{
+  border-color: red;
 }
